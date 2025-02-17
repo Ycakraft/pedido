@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pergunta</title>
+    <style>
+        body {
+            background-color: rgba(250, 0, 96, 0.463);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family:  sans-serif;
+            overflow: hidden;
+            
+        }
+        .buttons {
+            display: flex;
+            gap: 30px;
+           
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            position: relative;
+            border-radius: 15px;
+            color: rgba(141, 0, 166, 0.505);
+            background: lavender;
+            border-color: white ;
+        }
+        h1{
+            color: rgba(255, 255, 0, 0.642);
+            align-items: center;
+        }
+        p{
+            font-size: 25px;
+            font-family: sans-serif;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Me passa seu numero <br> segundo vamos correr terça ? </h1>
+    <div class="buttons">
+        <button onclick="responder('Sim')">Sim</button>
+        <button id="nao" onclick="fugir()">Não</button>
+    </div>
+    <p id="resposta"></p>
+    <script>
+        function responder(resposta) {
+            document.getElementById('resposta').textContent = "Escolheu certinho jubisnaguinha " ;
+        }
+
+        function fugir() {
+            let botao = document.getElementById('nao');
+            let maxX = window.innerWidth - botao.offsetWidth - 20;
+            let maxY = window.innerHeight - botao.offsetHeight - 20;
+            let x = Math.random() * maxX;
+            let y = Math.random() * maxY;
+            botao.style.position = 'absolute';
+            botao.style.left = `${x}px`;
+            botao.style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
